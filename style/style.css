@@ -1,0 +1,169 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: hsl(234, 29%, 20%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+body>.container {
+    display: grid;
+    gap: 2rem;
+    grid-template-areas: "text image";
+    background-color: white;
+    border-radius: 1rem;
+    align-items: center;
+    position: absolute;
+
+}
+
+.tarjeta {
+    max-width:100%;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 30px rgba(0, 0, 0, 0.1);
+    width: 100vw;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.i {
+    width: 100%;
+    height: 100%;
+    display:grid;
+    align-items: end;
+    border-radius: 8px;
+}
+
+/* from */
+#contactForm {
+    width: 380px;
+    padding: 32px;
+    border-radius: 8px;
+}
+
+.email_container {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input {
+    border-radius: 4px;
+    outline: none;
+    height: 36px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    padding: 0 8px;
+}
+
+.error_message {
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 4px;
+    display: none;
+}
+
+#email {
+    border-radius: 5px;
+    font-size: 14px;
+    display: flex;
+    text-decoration: none;
+    width: 34vw;
+}
+
+button {
+    background-color: #232742;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    display: flex;
+    text-decoration: none;
+    margin: 3px;
+
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal_content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 2px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close {
+    color: #ff0000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(255, 0, 0);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.t {
+    margin: 8px;
+    padding: 8px;
+}
+
+.espacio {
+    margin: 8px;
+    padding: 8px;
+}
+
+.btn-custom_2 {
+    background-color: #232742;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    display: block;
+    text-decoration: none;
+}
+
+.row{
+    align-items: center;
+}

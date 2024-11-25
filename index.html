@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&amp;family=Fraunces:wght@700&amp;display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="./js/script.js" defer></script>
+</head>
+<style>
+    /* Estilos generales para la imagen y el contenedor */
+    .tarjeta {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .i {
+        max-width: 100%;
+        /* Asegura que la imagen no sea más ancha que su contenedor */
+        height: auto;
+        /* Mantiene la proporción de la imagen */
+        display: block;
+        /* Para que el margin funcione correctamente */
+    }
+
+    /* Estilo para dispositivos móviles */
+    @media (max-width: 991px) {
+        .tarjeta {
+            display: block;
+            /* Mantén el diseño en bloque en pantallas pequeñas */
+        }
+
+        .i {
+            margin: 0 auto;
+            /* Centrar imagen en móviles */
+            width: 100%;
+            /* Ajustar la imagen al ancho del contenedor */
+        }
+
+        .card-body {
+            margin-top: 20px;
+            /* Espaciado superior para el texto */
+        }
+    }
+
+    /* Estilo para pantallas de escritorio */
+    @media (min-width: 992px) {
+        body{
+            align-items: center;
+            margin-right: 2rem;
+        }
+        .tarjeta {
+            display: flex;
+            /* Usa flexbox para el diseño en escritorio */
+            flex-direction: row;
+            /* Alinea los elementos en una fila */
+            align-items: center;
+            /* Centra los elementos verticalmente */
+            max-width: 100%;
+            
+        }
+
+        .i {
+            margin-left: 0;
+            /* Elimina margen izquierdo si lo hay */
+            margin-right: 0;
+            /* Elimina margen derecho */
+            order: 2;
+            /* Asegura que la imagen esté a la derecha */
+            flex: auto;
+            /* No permite que la imagen crezca */
+            max-width: 40%;
+            /* Asegura que la imagen ocupe hasta la mitad del ancho del contenedor */
+            width: auto;
+
+        }
+
+        .card-body {
+            flex: 1;
+            /* Permite que el contenido ocupe el espacio restante */
+            order: 1;
+            /* Asegura que el texto esté a la izquierda */
+        }
+
+        .tarjeta>.i {
+            gap: 2rem;
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-8 col-md-6">
+                <div class="tarjeta">
+                    <img src="./assets/images/illustration-sign-up-mobile.svg" alt="" class="i">
+                    <div class="card-body">
+                        <h1>Stay updated!</h1>
+                        <p>Join 60,000+ product managers receiving monthly updates on:</p>
+                        <div class="d-flex align-items-center">
+                            <img src="./assets/images/icon-list.svg" alt="">
+                            <h6>Product discovery and building what matters</h6>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <img src="./assets/images/icon-list.svg" alt="">
+                            <h6>Masuring to ensure updates are a success</h6>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <img src="./assets/images/icon-list.svg" alt="">
+                            <h6>And much more!</h6>
+                        </div>
+                        <form id="contactForm">
+                            <div class="email_container">
+                                <label id="">Email address</label>
+                                <input type="email" name="correo" id="correo" placeholder="email@company.com" />
+                                <samp class="error_message">Email incorrecto</samp>
+                            </div>
+                        </form>
+                        <button id="togglebutton1">Subscribe to monthly newsletter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal hidden" id="Modal">
+        <div class="modal_content">
+            <span class="close" id="cerrar">&times; </span>
+            <div class="container_2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+                    <defs>
+                        <linearGradient id="a" x1="100%" x2="0%" y1="0%" y2="100%">
+                            <stop offset="0%" stop-color="#FF6A3A" />
+                            <stop offset="100%" stop-color="#FF527B" />
+                        </linearGradient>
+                    </defs>
+                    <g fill="none">
+                        <circle cx="32" cy="32" r="32" fill="url(#a)" />
+                        <path stroke="#FFF" stroke-width="4" d="m18.286 34.686 8.334 7.98 19.094-18.285" />
+                    </g>
+                </svg>
+            </div>
+            <h1 class="t">Thanks for subscribing!</h1>
+            <p class="espacio">A confirmation email has been sent to ash@loremcompany.com. Please open it and click the
+                button inside to confirm your subscription. </p>
+            <button class="btn btn-custom_2 mt-3" id="togglebutton">Dismiss message</button>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
