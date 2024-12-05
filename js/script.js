@@ -1,30 +1,52 @@
-const togglebutton = document.querySelector("#togglebutton1")
-const togglebutton2 = document.querySelector("#togglebutton")
-const modal = document.querySelector("#Modal");
-const close = document.querySelector(`#cerrar`)
-const email = document.querySelector(`#contactForm`)
-const emailInput = document.querySelector(`#correo`)
-const p = document.querySelector(".espacio")
-const error = document.querySelector(".error_message")
-togglebutton.addEventListener("click", togglebutton1)
-togglebutton2.addEventListener("click", togglebutton)
-close.addEventListener("click", togglebutton1)
+const SINGUP_CARD = document.getElementById('subscription-card');
+const SUCCESSFUL_SIGN_UP_CARD = document.getElementById('subscription-success');
+const DISMISS_BUTTON = document.getElementById('dismiss');
+const emailIn = document.getElementById('email');
 
-function togglebutton1() {
-    let formdata = new FormData(email)
-    let correo = formdata.get("correo")
-    let arraycorreo = correo.split("@")
-    console.log(correo)
+function hide(e){
+    e.classList.add('hide');
+}
 
-    if (correo.includes("@") && arraycorreo.length <= 2 && arraycorreo[1].includes(".")) {
-        modal.classList.toggle(`hidden`)
-        espacio(correo)
-        console.log(modal);
+function show(e) {
+    e.classList.remove('hide');
+}
+
+function invalidInput(e){
+    e.classList.add('invalid');
+    invalidtext = document.getElementById("invalid-"+e.id);
+    show(invalidtext);
+}
+
+function validInput(e){
+    e.classList.remove('invalid');
+    invalidtext = document.getElementById("invalid-"+e.id);
+    hide(invalidtext);
+}
+
+function isEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function validateEmail(email){
+    if(isEmail(email)){
+        hide(SINGUP_CARD);
+        show(SUCCESSFUL_SIGN_UP_CARD);
+        validInput(emailIn);
+        return true;
     }
+    else invalidInput(emailIn);
+    return false;
+}
 
-}
-function espacio(correo) {
-    let espacio = ""
-    espacio = "A confirmation email has been sent to <strong>" + correo + "</strong>. Please open it and click the button inside to confirm your subscription."
-    p.innerHTML = espacio
-}
+document.querySelector('form').addEventListener('submit', function(event) { 
+    event.preventDefault(); // Prevents the form from submitting and the page from reloading
+    let emailValue = document.getElementById('email').value;
+    if(validateEmail(emailValue))
+    document.getElementById('email').value = ""; //Proceed if the input is email and empty the input element
+    });
+
+DISMISS_BUTTON.addEventListener('click', function() {
+    hide(SUCCESSFUL_SIGN_UP_CARD);
+    show(SINGUP_CARD);
+});
