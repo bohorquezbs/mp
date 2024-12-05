@@ -7,40 +7,28 @@
 body {
     background-color: hsl(234, 29%, 20%);
     display: flex;
-    justify-content: center;
     align-items: center;
     height: 100vh;
-    
+
 }
 
-body>.container {
-    display: grid;
-    gap: 2rem;
-    grid-template-areas: "text image";
-    background-color: white;
-    border-radius: 1rem;
-    align-items: center;
-    position: absolute;
-
+.container {
+    justify-content: center;
 }
 
 .tarjeta {
-    max-width:100%;
     border: none;
     border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 30px rgba(0, 0, 0, 0.1);
     width: 100vw;
     background-color: white;
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .i {
     width: 100%;
     height: 100%;
-    display:grid;
+    display: grid;
     align-items: end;
     border-radius: 8px;
 }
@@ -164,6 +152,6 @@ button {
     text-decoration: none;
 }
 
-.row{
-    align-items: center;
+.tarjeta>.i {
+    width: 50vw;
 }

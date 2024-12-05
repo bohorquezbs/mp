@@ -17,7 +17,6 @@
     /* Estilos generales para la imagen y el contenedor */
     .tarjeta {
         position: relative;
-        overflow: hidden;
     }
 
     .i {
@@ -51,19 +50,18 @@
 
     /* Estilo para pantallas de escritorio */
     @media (min-width: 992px) {
-        body{
+        body {
             align-items: center;
             margin-right: 2rem;
         }
+
         .tarjeta {
             display: flex;
             /* Usa flexbox para el diseño en escritorio */
             flex-direction: row;
             /* Alinea los elementos en una fila */
             align-items: center;
-            /* Centra los elementos verticalmente */
-            max-width: 100%;
-            
+
         }
 
         .i {
@@ -74,8 +72,6 @@
             order: 2;
             /* Asegura que la imagen esté a la derecha */
             flex: auto;
-            /* No permite que la imagen crezca */
-            max-width: 40%;
             /* Asegura que la imagen ocupe hasta la mitad del ancho del contenedor */
             width: auto;
 
@@ -96,34 +92,32 @@
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-12 col-sm-8 col-md-6">
-                <div class="tarjeta">
-                    <img src="./assets/images/illustration-sign-up-mobile.svg" alt="" class="i">
-                    <div class="card-body">
-                        <h1>Stay updated!</h1>
-                        <p>Join 60,000+ product managers receiving monthly updates on:</p>
-                        <div class="d-flex align-items-center">
-                            <img src="./assets/images/icon-list.svg" alt="">
-                            <h6>Product discovery and building what matters</h6>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <img src="./assets/images/icon-list.svg" alt="">
-                            <h6>Masuring to ensure updates are a success</h6>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <img src="./assets/images/icon-list.svg" alt="">
-                            <h6>And much more!</h6>
-                        </div>
-                        <form id="contactForm">
-                            <div class="email_container">
-                                <label id="">Email address</label>
-                                <input type="email" name="correo" id="correo" placeholder="email@company.com" />
-                                <samp class="error_message">Email incorrecto</samp>
-                            </div>
-                        </form>
-                        <button id="togglebutton1">Subscribe to monthly newsletter</button>
+        <div class="col-12 col-sm-8 col-md-6">
+            <div class="tarjeta">
+                <img src="./assets/images/illustration-sign-up-mobile.svg" alt="" class="i">
+                <div class="card-body">
+                    <h1>Stay updated!</h1>
+                    <p>Join 60,000+ product managers receiving monthly updates on:</p>
+                    <div class="d-flex align-items-center">
+                        <img src="./assets/images/icon-list.svg" alt="">
+                        <h6>Product discovery and building what matters</h6>
                     </div>
+                    <div class="d-flex align-items-center">
+                        <img src="./assets/images/icon-list.svg" alt="">
+                        <h6>Masuring to ensure updates are a success</h6>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="./assets/images/icon-list.svg" alt="">
+                        <h6>And much more!</h6>
+                    </div>
+                    <form id="contactForm">
+                        <div class="email_container">
+                            <label id="">Email address</label>
+                            <input type="email" name="correo" id="correo" placeholder="email@company.com" />
+                            <samp class="error_message">Email incorrecto</samp>
+                        </div>
+                    </form>
+                    <button id="togglebutton1">Subscribe to monthly newsletter</button>
                 </div>
             </div>
         </div>
